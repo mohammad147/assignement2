@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".rate_Us">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+<RadioGroup
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/radioVeryGood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Very Good" />
+
+            <RadioButton
+                android:id="@+id/radioGood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Good" />
+
+            <RadioButton
+                android:id="@+id/radioBad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bad" />
+
+            <RadioButton
+                android:id="@+id/radioVeryBad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Very Bad" />
+</RadioGroup>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSubmitFeedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit Feedback" />
+
+        <TextView
+            android:id="@+id/feedback_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="53w"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

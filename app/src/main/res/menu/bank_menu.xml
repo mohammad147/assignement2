@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/laon_cal"
+        android:title="loan calculator"
+        app:showAsAction="never"
+        />
+<item
+android:id="@+id/loan_employee_btn"
+    android:title="loan calculator for employee"
+    />
+
+    <item
+android:title="contact us"
+        android:id="@+id/contact_btn"
+        />
+    <item
+        android:id="@+id/rate_btn"
+        android:title="rate us"
+        />
+</menu>
