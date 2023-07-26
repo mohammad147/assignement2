@@ -18,14 +18,16 @@ class rate_Us : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_rate__us, container, false)
-        val commit:Button = view.findViewById(R.id.btnSubmitFeedback)
         val txt12:TextView=view.findViewById(R.id.feedback_txt)
-        commit.setOnClickListener{  view->
-            txt12.text="thank you"
+        val commit11:Button = view.findViewById(R.id.btnSubmitFeedback)
+
+
+        commit11.setOnClickListener{view->
+            txt12.text = "Thank you"
         }
 
 
-        return inflater.inflate(R.layout.fragment_rate__us, container, false)
+return view
     }
 
 }
