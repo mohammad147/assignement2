@@ -67,7 +67,9 @@ class CaculateLoan_emp : Fragment(R.layout.fragment_caculate_loan_emp) {
             var tamount : Double= totalamount.text.toString().toDouble();
             var lterm:Double = loan_term.text.toString().toDouble();
             var salary:Double=monthlysalary.text.toString().toDouble();
-    if(sp == "home loan"){
+
+
+                if(sp == "home loan"){
        var rate:Double=hcalintrest(tamount,lterm,salary);
       intrest.text = rate.toString();
       }
@@ -118,6 +120,10 @@ if(salary_checker(totalamount,loanterm,rate,salary))
         return String.format("%.2f", number)
     }
     private fun car_calintrest(totalamount:Double,loanterm:Double,salary: Double):Double{
+
+        if(totalamount == null || loanterm == null || salary==null){
+            return 0.0
+        }
         var rate:Double= 2.0
 
         // rate+=100.0
@@ -147,6 +153,9 @@ if(salary_checker(totalamount,loanterm,rate,salary))
             return 0.0
     }
     private fun personal_calintrest(totalamount:Double,loanterm:Double,salary: Double):Double{
+        if(totalamount == null || loanterm == null || salary==null){
+            return 0.0
+        }
         var rate:Double= 2.0
         // rate+=100.0
         if(totalamount < 1000.0 ){
@@ -177,6 +186,9 @@ if(salary_checker(totalamount,loanterm,rate,salary))
             return 0.0
     }
     public fun cal_payment(TotalAmount: Double,Year :Double,Intrest:Double,pay_method:Int):Double{
+        if(TotalAmount == null || Year == null || Intrest==null){
+            return 0.0
+        }
 
         val yearlyInterestRateDecimal = Intrest / 100.0
         if(pay_method==1){
@@ -193,6 +205,9 @@ if(salary_checker(totalamount,loanterm,rate,salary))
 
     }
     public fun salary_checker(TotalAmount: Double,Year :Double,Intrest:Double,salary:Double):Boolean{
+        if(TotalAmount == null || Year == null || salary==null || Intrest==null){
+            return false
+        }
         val yearlyInterestRateDecimal = Intrest / 100.0
             var yearlyPayment:Double = TotalAmount * (yearlyInterestRateDecimal * Math.pow(1 + yearlyInterestRateDecimal, Year))
         var salary_percentage:Double = salary * 80/100;

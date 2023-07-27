@@ -84,7 +84,10 @@ class CaculateLoan : Fragment(R.layout.fragment_caculate_loan) {
         return view;
     }
     private fun hcalintrest(totalamount:Double,loanterm:Double):Double{
-    var rate:Double= 3.0
+        if(totalamount == null || loanterm == null){
+            return 0.0
+        }
+        var rate:Double= 3.0
 
    // rate+=100.0
     if(totalamount < 10000.0 ){
@@ -110,6 +113,9 @@ class CaculateLoan : Fragment(R.layout.fragment_caculate_loan) {
     return rate
 }
     private fun car_calintrest(totalamount:Double,loanterm:Double):Double{
+        if(totalamount == null || loanterm == null){
+            return 0.0
+        }
         var rate:Double= 2.0
 
         // rate+=100.0
@@ -136,6 +142,9 @@ class CaculateLoan : Fragment(R.layout.fragment_caculate_loan) {
         return rate
     }
     private fun personal_calintrest(totalamount:Double,loanterm:Double,checkbox:Boolean):Double{
+        if(totalamount == null || loanterm == null){
+            return 0.0
+        }
         var rate:Double= 2.0
         // rate+=100.0
         if(totalamount < 1000.0 ){
@@ -167,7 +176,9 @@ class CaculateLoan : Fragment(R.layout.fragment_caculate_loan) {
         return rate
     }
     public fun cal_payment(TotalAmount: Double,Year :Double,Intrest:Double,pay_method:Int):Double{
-
+        if(TotalAmount == null || Year == null || Intrest==null){
+            return 0.0
+        }
         val yearlyInterestRateDecimal = Intrest / 100.0
         if(pay_method==1){
             var yearlyPayment:Double = TotalAmount * (yearlyInterestRateDecimal * Math.pow(1 + yearlyInterestRateDecimal, Year))
